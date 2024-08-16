@@ -1,0 +1,61 @@
+
+# WatchState Project
+
+## Overview
+
+The **WatchState** project is a simple Java application that simulates the state management of a watch. The primary focus is on handling the transitions between different states of a watch, such as measuring time, setting time, and handling the condition of a dead battery. This project also includes unit tests to verify the correctness of state transitions, ensuring that the watch behaves as expected in various scenarios.
+
+## Project Structure
+
+- **src/main/java/com/settime/WatchState.java**: This file contains the `WatchState` class, which represents the state machine of the watch. It handles various actions such as pressing buttons, timeouts, and battery depletion.
+
+- **src/test/java/com/settime/WatchStateTest.java**: This file contains unit tests for the `WatchState` class, using JUnit 5. These tests ensure that the `WatchState` class transitions correctly between states based on different actions.
+
+- **pom.xml**: This is the Maven project file, which manages dependencies and build configurations. The project uses Java 22 and includes dependencies for JavaFX and JUnit 5.
+
+## WatchState Class
+
+The `WatchState` class simulates a basic watch with three primary states:
+
+1. **MEASURE_TIME (1)**: The watch is in its default state, where it measures time.
+2. **SET_TIME (2)**: The watch is in the state where the time can be set.
+3. **DEAD_BATTERY (3)**: The watch is in a state where the battery is depleted, and no further actions can be performed.
+
+### Key Methods:
+
+- **pressLeftButton()**: Handles the action of pressing the left button on the watch. Transitions the state from `SET_TIME` to `MEASURE_TIME`.
+- **pressBothButtons()**: Handles the action of pressing both buttons simultaneously. Toggles between `MEASURE_TIME` and `SET_TIME`.
+- **timeout()**: Handles the action when a timeout occurs. In this simple simulation, it keeps the watch in the `MEASURE_TIME` state.
+- **batteryEmpty()**: Simulates the battery depleting, transitioning the watch to the `DEAD_BATTERY` state.
+- **getCurrentState()**: Returns the current state of the watch.
+
+## Testing
+
+The project includes comprehensive unit tests to verify that the `WatchState` class behaves correctly under various conditions. The tests cover scenarios such as pressing buttons, timeouts, and handling battery depletion. The tests ensure that the watch's state transitions align with the expected behavior.
+
+### Test Cases:
+
+- **testInitialState()**: Verifies that the initial state of the watch is `MEASURE_TIME`.
+- **testPressLeftButtonMeasureTime()**: Tests the behavior of pressing the left button in the `MEASURE_TIME` state.
+- **testPressBothButtonsMeasureTime()**: Tests the behavior of pressing both buttons in the `MEASURE_TIME` state.
+- **testPressBothButtonsSetTime()**: Verifies the state after pressing both buttons twice.
+- **testTimeoutMeasureTime()**: Tests the behavior when a timeout occurs in the `MEASURE_TIME` state.
+- **testPressLeftButtonSetTime()**: Tests the behavior of pressing the left button in the `SET_TIME` state.
+- **testBatteryEmpty()**: Verifies the transition to the `DEAD_BATTERY` state when the battery is depleted.
+- **testRepeatedPressBothButtons()**: Tests the behavior of repeatedly pressing both buttons.
+- **testRepeatedPressLeftButton()**: Tests the behavior of repeatedly pressing the left button.
+- **testTheEntireWatchStatePath()**: Verifies the state transitions through an entire usage scenario of the watch.
+- **testWatchStateActionsInDeadBattery()**: Tests the behavior of the watch when actions are performed in the `DEAD_BATTERY` state.
+
+## Maven Dependencies
+
+The project uses the following dependencies:
+
+- **JUnit 5**: For writing and executing unit tests.
+- **JavaFX**: Though not actively used in this simulation, the dependencies are included for potential GUI development.
+
+## Why This Project?
+
+This project serves as an educational tool to understand state management in Java using simple concepts. It is a practical example of how state machines work, how to write unit tests to verify state transitions, and how to manage a Java project using Maven.
+
+By working through this project, you can gain insights into state management, testing strategies, and Maven project configuration, which are fundamental skills in software development.

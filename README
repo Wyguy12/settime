@@ -1,15 +1,14 @@
-
-# WatchState Project
-
 ## Overview
 
-The **WatchState** project is a simple Java application that simulates the state management of a watch. The primary focus is on handling the transitions between different states of a watch, such as measuring time, setting time, and handling the condition of a dead battery. This project also includes unit tests to verify the correctness of state transitions, ensuring that the watch behaves as expected in various scenarios.
+The **WatchState** project is a simple Java application that simulates the state management of a watch. 
+The primary focus is on handling the transitions between different states of a watch, such as measuring time, setting time, and handling the condition of a dead battery. 
+This project also includes unit tests to verify the correctness of state transitions, ensuring that the watch behaves as expected in various scenarios.
 
 ## Project Structure
 
-- **src/main/java/com/settime/WatchState.java**: This file contains the `WatchState` class, which represents the state machine of the watch. It handles various actions such as pressing buttons, timeouts, and battery depletion.
+- **WatchState.java**: This file contains the `WatchState` class, which represents the state machine of the watch. It handles various actions such as pressing buttons, timeouts, and battery depletion.
 
-- **src/test/java/com/settime/WatchStateTest.java**: This file contains unit tests for the `WatchState` class, using JUnit 5. These tests ensure that the `WatchState` class transitions correctly between states based on different actions.
+- **WatchStateTest.java**: This file contains unit tests for the `WatchState` class, using JUnit 5. These tests ensure that the `WatchState` class transitions correctly between states based on different actions.
 
 - **pom.xml**: This is the Maven project file, which manages dependencies and build configurations. The project uses Java 22 and includes dependencies for JavaFX and JUnit 5.
 
@@ -31,7 +30,9 @@ The `WatchState` class simulates a basic watch with three primary states:
 
 ## Testing
 
-The project includes comprehensive unit tests to verify that the `WatchState` class behaves correctly under various conditions. The tests cover scenarios such as pressing buttons, timeouts, and handling battery depletion. The tests ensure that the watch's state transitions align with the expected behavior.
+The project includes comprehensive unit tests to verify that the `WatchState` class behaves correctly under various conditions. 
+The tests cover scenarios such as pressing buttons, timeouts, and handling battery depletion. 
+The tests ensure that the watch's state transitions align with the expected behavior.
 
 ### Test Cases:
 
@@ -52,10 +53,8 @@ The project includes comprehensive unit tests to verify that the `WatchState` cl
 The project uses the following dependencies:
 
 - **JUnit 5**: For writing and executing unit tests.
-- **JavaFX**: Though not actively used in this simulation, the dependencies are included for potential GUI development.
 
 ## Why This Project?
 
-This project serves as an educational tool to understand state management in Java using simple concepts. It is a practical example of how state machines work, how to write unit tests to verify state transitions, and how to manage a Java project using Maven.
-
-By working through this project, you can gain insights into state management, testing strategies, and Maven project configuration, which are fundamental skills in software development.
+This project serves as an educational tool to understand state management in Java using simple concepts. 
+It is a practical example of how state machines work, how to write unit tests to verify state transitions, and how to manage a Java project using Maven.
